@@ -101,11 +101,29 @@ export default function MistiqueJourney() {
           <Link href="/mistiqj" className="text-xl font-serif font-bold tracking-tight text-primary">
             Mistique Journey
           </Link>
-          <Button size="sm" asChild>
-            <a href="https://forms.gle/F9YJPNvw18MZGPai7" target="_blank" rel="noopener noreferrer">
-              Begin Your Journey
-            </a>
-          </Button>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex gap-6 text-sm font-medium text-muted-foreground">
+              <Link href="/" className="hover:text-primary transition-colors">Job</Link>
+              <a href="https://forms.gle/FXdjKAYgnXpCRHnf8" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Apply</a>
+              <a href="https://forms.gle/2HVxMaWo2K5duALv5" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Refer</a>
+            </div>
+            <Button size="sm" asChild>
+              <a href="https://forms.gle/F9YJPNvw18MZGPai7" target="_blank" rel="noopener noreferrer">
+                Begin Your Journey
+              </a>
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="gap-2 font-medium"
+              asChild
+            >
+              <Link href="/th/mistiqj">
+                <span className="text-base">🇹🇭</span>
+                <span>TH</span>
+              </Link>
+            </Button>
+          </div>
         </div>
       </nav>
 
