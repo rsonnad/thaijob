@@ -14,7 +14,7 @@ export function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40"
     >
       <div className="flex justify-between items-center px-6 py-4 md:px-12 max-w-7xl mx-auto w-full">
-        <Link href="/mistiqj" className="text-xl font-serif font-bold tracking-tight text-primary">
+        <Link href={lang === "th" ? "/th/mistiqj" : "/mistiqj"} className="text-xl font-serif font-bold tracking-tight text-primary">
           Mistique Journey
         </Link>
         
