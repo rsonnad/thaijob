@@ -7,7 +7,7 @@ export const en = {
   },
   intro: {
     paragraph1: "Immediate opportunity for one or two travel-ready massage therapists who loves wellness, fitness, technology and personal growth to help promote a new spa concept that combines massage, breathwork, fitness, along with a future opportunity to train AI robots to learn human bodywork",
-    paragraph2: "Must possess great massage skills and be interested in developing these skills further. Job will require Travel in Asia, along with Europe and the USA, once visas are obtained, with a base in Austin Texas USA. 45,000 bhat base pay per month for 35 hours/week plus all travel and lodging expenses, plus bonuses - or 35,000/month base pay each if two therapists 30 hours/week each.",
+    paragraph2: "Must possess advanced massage skills and be interested in developing these skills further. Job will require Travel in Asia, along with Europe and the USA, once visas are obtained, with a base in Austin Texas USA. 45,000 bhat base pay per month for 35 hours/week plus all travel and lodging expenses, plus bonuses - or 35,000/month base pay each if two therapists 30 hours/week each.",
   },
   referral: {
     title: "💰 Know someone? Referral Reward",
