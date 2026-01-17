@@ -15,6 +15,7 @@ import saunaSitImage from "@assets/Sauna_Sit_1768661809468.jpg";
 import windingDownImage from "@assets/windingdown_1768661823894.jpg";
 import windDownImage from "@assets/Wind_down_1768662069089.jpg";
 import tranceModeImage from "@assets/trancemode_1768664468090.jpg";
+import crossLeggedZenImage from "@assets/cross_legged_zen_1768684688620.jpg";
 
 const journeyElements = [
   { title: "Online Intake Survey", description: "Personalized preparation for your journey", image: surveyImage },
@@ -25,7 +26,7 @@ const journeyElements = [
   { title: "Sauna", description: "Detoxifying heat therapy", image: saunaSitImage },
   { title: "Cold Bath", description: "Invigorating cold immersion", image: icebathImage },
   { title: "Oil Massage", description: "Relaxing bodywork with therapeutic oils", image: oilMassageImage },
-  { title: "Resting & Integration", description: "Peaceful completion of your journey", image: windingDownImage },
+  { title: "Resting & Integration", description: "Peaceful completion of your journey", image: crossLeggedZenImage },
 ];
 
 const testimonials = [

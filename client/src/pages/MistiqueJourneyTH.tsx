@@ -15,6 +15,7 @@ import saunaSitImage from "@assets/Sauna_Sit_1768661809468.jpg";
 import windingDownImage from "@assets/windingdown_1768661823894.jpg";
 import windDownImage from "@assets/Wind_down_1768662069089.jpg";
 import tranceModeImage from "@assets/trancemode_1768664468090.jpg";
+import crossLeggedZenImage from "@assets/cross_legged_zen_1768684688620.jpg";
 
 const journeyElements = [
   { title: "แบบสอบถามออนไลน์", description: "เตรียมความพร้อมเฉพาะบุคคลก่อนเริ่มต้น", image: surveyImage },
@@ -25,7 +26,7 @@ const journeyElements = [
   { title: "ซาวน่า", description: "การบำบัดด้วยความร้อนเพื่อขับสารพิษ", image: saunaSitImage },
   { title: "อาบน้ำเย็น", description: "การแช่น้ำเย็นเพื่อกระตุ้นร่างกาย", image: icebathImage },
   { title: "นวดน้ำมัน", description: "การนวดผ่อนคลายด้วยน้ำมันบำบัด", image: oilMassageImage },
-  { title: "พักผ่อนและผสานรวม", description: "สิ้นสุดการเดินทางอย่างสงบ", image: windingDownImage },
+  { title: "พักผ่อนและผสานรวม", description: "สิ้นสุดการเดินทางอย่างสงบ", image: crossLeggedZenImage },
 ];
 
 const testimonials = [
