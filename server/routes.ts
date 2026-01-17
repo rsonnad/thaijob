@@ -9,11 +9,28 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   
-  app.post(api.contact.create.path, async (req, res) => {
+  app.post(api.application.create.path, async (req, res) => {
     try {
-      const input = api.contact.create.input.parse(req.body);
-      const contact = await storage.createContact(input);
-      res.status(200).json(contact);
+      const input = api.application.create.input.parse(req.body);
+      const application = await storage.createApplication(input);
+      res.status(201).json(application);
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        res.status(400).json({
+          message: err.errors[0].message,
+          field: err.errors[0].path.join('.'),
+        });
+      } else {
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  });
+
+  app.post(api.referral.create.path, async (req, res) => {
+    try {
+      const input = api.referral.create.input.parse(req.body);
+      const referral = await storage.createReferral(input);
+      res.status(201).json(referral);
     } catch (err) {
       if (err instanceof z.ZodError) {
         res.status(400).json({

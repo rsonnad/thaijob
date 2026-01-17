@@ -1,18 +1,26 @@
-import { contacts, type Contact, type InsertContact } from "@shared/schema";
+import { applications, referrals, type InsertApplication, type Application, type InsertReferral, type Referral } from "@shared/schema";
 import { db } from "./db";
-import { eq } from "drizzle-orm";
 
 export interface IStorage {
-  createContact(contact: InsertContact): Promise<Contact>;
+  createApplication(app: InsertApplication): Promise<Application>;
+  createReferral(ref: InsertReferral): Promise<Referral>;
 }
 
 export class DatabaseStorage implements IStorage {
-  async createContact(insertContact: InsertContact): Promise<Contact> {
-    const [contact] = await db
-      .insert(contacts)
-      .values(insertContact)
+  async createApplication(insertApp: InsertApplication): Promise<Application> {
+    const [app] = await db
+      .insert(applications)
+      .values(insertApp)
       .returning();
-    return contact;
+    return app;
+  }
+
+  async createReferral(insertRef: InsertReferral): Promise<Referral> {
+    const [ref] = await db
+      .insert(referrals)
+      .values(insertRef)
+      .returning();
+    return ref;
   }
 }
 

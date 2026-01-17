@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertContactSchema, contacts } from './schema';
+import { insertApplicationSchema, insertReferralSchema, applications, referrals } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -12,13 +12,24 @@ export const errorSchemas = {
 };
 
 export const api = {
-  contact: {
+  application: {
     create: {
       method: 'POST' as const,
-      path: '/api/contact',
-      input: insertContactSchema,
+      path: '/api/applications',
+      input: insertApplicationSchema,
       responses: {
-        200: z.custom<typeof contacts.$inferSelect>(),
+        201: z.custom<typeof applications.$inferSelect>(),
+        400: errorSchemas.validation,
+      },
+    },
+  },
+  referral: {
+    create: {
+      method: 'POST' as const,
+      path: '/api/referrals',
+      input: insertReferralSchema,
+      responses: {
+        201: z.custom<typeof referrals.$inferSelect>(),
         400: errorSchemas.validation,
       },
     },
@@ -37,5 +48,7 @@ export function buildUrl(path: string, params?: Record<string, string | number>)
   return url;
 }
 
-export type ContactInput = z.infer<typeof api.contact.create.input>;
-export type ContactResponse = z.infer<typeof api.contact.create.responses[200]>;
+export type ApplicationInput = z.infer<typeof api.application.create.input>;
+export type ApplicationResponse = z.infer<typeof api.application.create.responses[201]>;
+export type ReferralInput = z.infer<typeof api.referral.create.input>;
+export type ReferralResponse = z.infer<typeof api.referral.create.responses[201]>;
