@@ -55,19 +55,19 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${beachWork})` }}
         >
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
         </div>
         
         <div className="relative z-10 max-w-5xl px-6 text-center text-white">
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-4 text-white/90"
+            className="text-lg md:text-2xl font-bold tracking-[0.1em] uppercase mb-4 text-white drop-shadow-md"
           >
             {t.hero.label}
           </motion.p>
@@ -75,62 +75,59 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 leading-tight drop-shadow-sm"
+            className="text-2xl md:text-4xl lg:text-5xl font-serif font-medium mb-10 leading-tight text-white/90 drop-shadow-lg"
           >
             {t.hero.title}
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl font-light mb-10 max-w-3xl mx-auto text-white/80"
-          >
-            {t.hero.subtitle}
-          </motion.p>
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 h-12 px-10 rounded-full" asChild>
+            <Button size="lg" className="bg-white text-black hover:bg-white/90 h-12 px-10 rounded-full font-bold w-full sm:w-auto" asChild>
               <a href="#apply">{t.hero.apply}</a>
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 h-12 px-10 rounded-full font-bold w-full sm:w-auto backdrop-blur-sm" asChild>
+              <a href="#refer">{t.referral.button}</a>
             </Button>
           </motion.div>
         </div>
       </section>
 
-      <main className="max-w-6xl mx-auto px-6 py-24 space-y-32">
+      <main className="max-w-6xl mx-auto px-6 space-y-24 py-16">
         {/* Core Description - Grouped Text & Image */}
-        <section className="grid md:grid-cols-2 gap-16 items-start">
-          <div className="space-y-8">
-            <h2 className="text-4xl font-serif font-bold leading-tight">{t.requirements.title}</h2>
-            <ul className="space-y-6">
+        <section className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h2 className="text-3xl font-serif font-bold leading-tight">{t.requirements.title}</h2>
+            <ul className="space-y-4">
               {t.requirements.items.map((item: string, i: number) => (
-                <li key={i} className="flex gap-4 items-start text-lg text-muted-foreground leading-relaxed">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
+                <li key={i} className="flex gap-4 items-start text-lg text-muted-foreground leading-snug">
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto md:ml-auto md:mr-0">
+          <div className="rounded-2xl overflow-hidden shadow-xl max-w-sm mx-auto md:ml-auto md:mr-0">
             <img src={skylineTreatment} alt="Treatment" className="w-full h-auto object-cover" />
           </div>
         </section>
 
         {/* Work & AI Section - Grouped Text & Image */}
-        <section className="bg-secondary/20 rounded-3xl p-8 md:p-16 grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto md:mr-auto md:ml-0">
+        <section className="bg-secondary/20 rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg max-w-sm mx-auto md:mr-auto md:ml-0">
             <img src={robotMassage} alt="Robotics Training" className="w-full h-auto object-cover" />
           </div>
-          <div className="order-1 md:order-2 space-y-8">
-            <h2 className="text-4xl font-serif font-bold leading-tight">{t.work.title}</h2>
-            <div className="space-y-6">
-              <p className="text-xl text-muted-foreground leading-relaxed">
+          <div className="order-1 md:order-2 space-y-6">
+            <h2 className="text-3xl font-serif font-bold leading-tight">{t.work.title}</h2>
+            <div className="space-y-4">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t.work.description}
               </p>
-              <div className="p-5 bg-white border border-primary/10 rounded-xl text-primary font-medium flex gap-3 items-center">
-                <span className="text-2xl shrink-0">✨</span>
+              <div className="p-4 bg-white border border-primary/10 rounded-xl text-primary font-medium flex gap-3 items-center">
+                <span className="text-xl shrink-0">✨</span>
                 {t.work.noErotic}
               </div>
             </div>
@@ -138,67 +135,67 @@ export default function Home() {
         </section>
 
         {/* Compensation & Travel - Visual Grid */}
-        <section className="grid md:grid-cols-3 gap-12 text-center py-12 border-y border-border/40">
-          <div className="space-y-4">
-            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center">
-              <DollarSign className="w-8 h-8 text-primary" />
+        <section className="grid md:grid-cols-3 gap-8 text-center py-8 border-y border-border/40">
+          <div className="space-y-3">
+            <div className="w-12 h-12 mx-auto bg-primary/5 rounded-full flex items-center justify-center">
+              <DollarSign className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold">{t.compensation.salary}</h3>
-            <p className="text-muted-foreground font-light">{t.compensation.bonus}</p>
+            <h3 className="text-xl font-bold">{t.compensation.salary}</h3>
+            <p className="text-sm text-muted-foreground font-light">{t.compensation.bonus}</p>
           </div>
-          <div className="space-y-4">
-            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center">
-              <Plane className="w-8 h-8 text-primary" />
+          <div className="space-y-3">
+            <div className="w-12 h-12 mx-auto bg-primary/5 rounded-full flex items-center justify-center">
+              <Plane className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold">{t.compensation.travel}</h3>
-            <p className="text-muted-foreground font-light px-4">Thailand, Vietnam, Bali, India, USA, Europe</p>
+            <h3 className="text-xl font-bold">{t.compensation.travel}</h3>
+            <p className="text-sm text-muted-foreground font-light px-4">Thailand, Vietnam, Bali, India, USA, Europe</p>
           </div>
-          <div className="space-y-4">
-            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center">
-              <Users className="w-8 h-8 text-primary" />
+          <div className="space-y-3">
+            <div className="w-12 h-12 mx-auto bg-primary/5 rounded-full flex items-center justify-center">
+              <Users className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold">Global Events</h3>
-            <p className="text-muted-foreground font-light px-4">Yoga festivals, Music festivals, Wellness & Biohacking conferences</p>
+            <h3 className="text-xl font-bold">Global Events</h3>
+            <p className="text-sm text-muted-foreground font-light px-4">Yoga, Music festivals, Wellness & Biohacking</p>
           </div>
         </section>
 
         {/* Referral Section */}
-        <section id="refer" className="relative rounded-3xl overflow-hidden min-h-[600px] flex items-center shadow-2xl">
+        <section id="refer" className="relative rounded-3xl overflow-hidden min-h-[500px] flex items-center shadow-2xl">
           <div 
             className="absolute inset-0 z-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${referralBonus})` }}
           />
-          <div className="absolute inset-0 bg-black/65 z-10" />
-          <div className="relative z-20 max-w-2xl p-8 md:p-16 text-white space-y-8">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight">{t.referral.title}</h2>
-            <p className="text-xl font-light opacity-90 leading-relaxed">{t.referral.description}</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20">
-                <p className="text-xs uppercase tracking-widest opacity-60 mb-1">Step 1</p>
-                <p className="text-lg font-bold">{t.referral.reward1}</p>
+          <div className="absolute inset-0 bg-black/70 z-10" />
+          <div className="relative z-20 max-w-2xl p-8 md:p-12 text-white space-y-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight">{t.referral.title}</h2>
+            <p className="text-lg font-light opacity-90 leading-relaxed">{t.referral.description}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
+                <p className="text-[10px] uppercase tracking-widest opacity-60 mb-1">Step 1</p>
+                <p className="text-base font-bold">{t.referral.reward1}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20">
-                <p className="text-xs uppercase tracking-widest opacity-60 mb-1">Step 2</p>
-                <p className="text-lg font-bold">{t.referral.reward2}</p>
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
+                <p className="text-[10px] uppercase tracking-widest opacity-60 mb-1">Step 2</p>
+                <p className="text-base font-bold">{t.referral.reward2}</p>
               </div>
             </div>
             <Form {...referForm}>
-              <form onSubmit={referForm.handleSubmit(onRefer)} className="space-y-4 pt-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={referForm.handleSubmit(onRefer)} className="space-y-3 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <FormField control={referForm.control} name="referrerName" render={({ field }) => (
-                    <FormItem><Input placeholder={t.referForm.referrerName} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-12" {...field} /></FormItem>
+                    <FormItem><Input placeholder={t.referForm.referrerName} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-10" {...field} /></FormItem>
                   )} />
                   <FormField control={referForm.control} name="referrerEmail" render={({ field }) => (
-                    <FormItem><Input placeholder={t.referForm.referrerEmail} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-12" {...field} /></FormItem>
+                    <FormItem><Input placeholder={t.referForm.referrerEmail} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-10" {...field} /></FormItem>
                   )} />
                 </div>
                 <FormField control={referForm.control} name="candidateName" render={({ field }) => (
-                  <FormItem><Input placeholder={t.referForm.candidateName} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-12" {...field} /></FormItem>
+                  <FormItem><Input placeholder={t.referForm.candidateName} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-10" {...field} /></FormItem>
                 )} />
                 <FormField control={referForm.control} name="candidateContact" render={({ field }) => (
-                  <FormItem><Input placeholder={t.referForm.candidateContact} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-12" {...field} /></FormItem>
+                  <FormItem><Input placeholder={t.referForm.candidateContact} className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-10" {...field} /></FormItem>
                 )} />
-                <Button type="submit" className="w-full h-12 bg-white text-black hover:bg-white/90 font-bold rounded-full transition-transform active:scale-[0.98]">
+                <Button type="submit" className="w-full h-11 bg-white text-black hover:bg-white/90 font-bold rounded-full transition-transform active:scale-[0.98]">
                   {t.referForm.submit}
                 </Button>
               </form>
@@ -207,44 +204,44 @@ export default function Home() {
         </section>
 
         {/* Application Form */}
-        <section id="apply" className="max-w-2xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight">{t.applyForm.title}</h2>
-            <p className="text-xl text-muted-foreground font-light">Join our global wellness journey and help us train the future of robotics.</p>
+        <section id="apply" className="max-w-xl mx-auto space-y-8">
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight">{t.applyForm.title}</h2>
+            <p className="text-lg text-muted-foreground font-light">Join our global wellness journey.</p>
           </div>
           
           <Form {...applyForm}>
-            <form onSubmit={applyForm.handleSubmit(onApply)} className="space-y-8 bg-card p-8 md:p-12 rounded-3xl border shadow-sm">
-              <div className="grid md:grid-cols-2 gap-8">
+            <form onSubmit={applyForm.handleSubmit(onApply)} className="space-y-6 bg-card p-8 rounded-2xl border shadow-sm">
+              <div className="grid md:grid-cols-2 gap-4">
                 <FormField control={applyForm.control} name="name" render={({ field }) => (
-                  <FormItem><FormLabel className="text-base font-medium">{t.applyForm.name}</FormLabel><FormControl><Input className="h-12 bg-muted/30" {...field} /></FormControl><FormMessage /></FormItem>
+                  <FormItem><FormLabel className="text-sm font-medium">{t.applyForm.name}</FormLabel><FormControl><Input className="h-10 bg-muted/30" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={applyForm.control} name="email" render={({ field }) => (
-                  <FormItem><FormLabel className="text-base font-medium">{t.applyForm.email}</FormLabel><FormControl><Input className="h-12 bg-muted/30" {...field} /></FormControl><FormMessage /></FormItem>
+                  <FormItem><FormLabel className="text-sm font-medium">{t.applyForm.email}</FormLabel><FormControl><Input className="h-10 bg-muted/30" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
               </div>
               <FormField control={applyForm.control} name="phone" render={({ field }) => (
-                <FormItem><FormLabel className="text-base font-medium">{t.applyForm.phone}</FormLabel><FormControl><Input className="h-12 bg-muted/30" {...field} /></FormControl><FormMessage /></FormItem>
+                <FormItem><FormLabel className="text-sm font-medium">{t.applyForm.phone}</FormLabel><FormControl><Input className="h-10 bg-muted/30" {...field} /></FormControl><FormMessage /></FormItem>
               )} />
               <FormField control={applyForm.control} name="experience" render={({ field }) => (
-                <FormItem><FormLabel className="text-base font-medium">{t.applyForm.experience}</FormLabel><FormControl><Textarea className="min-h-[120px] bg-muted/30 resize-none" {...field} /></FormControl><FormMessage /></FormItem>
+                <FormItem><FormLabel className="text-sm font-medium">{t.applyForm.experience}</FormLabel><FormControl><Textarea className="min-h-[100px] bg-muted/30 resize-none" {...field} /></FormControl><FormMessage /></FormItem>
               )} />
               <FormField control={applyForm.control} name="message" render={({ field }) => (
-                <FormItem><FormLabel className="text-base font-medium">{t.applyForm.message}</FormLabel><FormControl><Textarea className="min-h-[120px] bg-muted/30 resize-none" {...field} /></FormControl><FormMessage /></FormItem>
+                <FormItem><FormLabel className="text-sm font-medium">{t.applyForm.message}</FormLabel><FormControl><Textarea className="min-h-[100px] bg-muted/30 resize-none" {...field} /></FormControl><FormMessage /></FormItem>
               )} />
-              <Button type="submit" className="w-full h-14 text-xl font-bold rounded-full transition-all hover:shadow-xl active:scale-[0.98]" disabled={applyForm.formState.isSubmitting}>
-                {applyForm.formState.isSubmitting ? <Loader2 className="animate-spin w-6 h-6" /> : t.applyForm.submit}
+              <Button type="submit" className="w-full h-12 text-lg font-bold rounded-full transition-all hover:shadow-md active:scale-[0.98]" disabled={applyForm.formState.isSubmitting}>
+                {applyForm.formState.isSubmitting ? <Loader2 className="animate-spin w-5 h-5" /> : t.applyForm.submit}
               </Button>
             </form>
           </Form>
         </section>
       </main>
 
-      <footer className="py-20 border-t bg-muted/10 text-center text-muted-foreground">
-        <div className="max-w-2xl mx-auto px-6 space-y-4">
-          <p className="text-lg font-serif font-bold text-primary">Mistique Journey</p>
-          <p className="font-light">Alpaca Playhouse @ Austin, Texas USA</p>
-          <p className="text-xs uppercase tracking-widest opacity-40 pt-8">© 2026 Mistique Journey. All rights reserved.</p>
+      <footer className="py-12 border-t bg-muted/10 text-center text-muted-foreground">
+        <div className="max-w-2xl mx-auto px-6 space-y-2">
+          <p className="text-base font-serif font-bold text-primary">Mistique Journey</p>
+          <p className="text-xs font-light">Alpaca Playhouse @ Austin, Texas USA</p>
+          <p className="text-[10px] uppercase tracking-widest opacity-40 pt-4">© 2026 Mistique Journey. All rights reserved.</p>
         </div>
       </footer>
     </div>
