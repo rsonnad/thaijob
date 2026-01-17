@@ -63,6 +63,16 @@ export default function Home() {
       </section>
 
       <main className="max-w-4xl mx-auto px-6 space-y-16 py-12">
+        {/* Intro Section */}
+        <section className="space-y-4 bg-primary/5 p-6 md:p-8 rounded-2xl border border-primary/10">
+          <p className="text-base md:text-lg text-foreground leading-relaxed">
+            {t.intro.paragraph1} <span className="text-lg">✨🤖</span>
+          </p>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            {t.intro.paragraph2}
+          </p>
+        </section>
+
         {/* Referral Section */}
         <section id="refer" className="space-y-6 bg-white p-8 md:p-10 rounded-3xl border shadow-sm">
           <div className="max-w-sm mx-auto rounded-2xl overflow-hidden shadow-md mb-6">
