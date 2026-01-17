@@ -92,6 +92,7 @@ export const en = {
   },
   nav: {
     home: "Home",
+    job: "Job",
     apply: "Apply",
     refer: "Refer",
   }
@@ -193,6 +194,7 @@ export const th = {
   },
   nav: {
     home: "หน้าแรก",
+    job: "งาน",
     apply: "สมัครงาน",
     refer: "แนะนำเพื่อน",
   }

@@ -14,13 +14,13 @@ export function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40"
     >
       <div className="flex justify-between items-center px-6 py-4 md:px-12 max-w-7xl mx-auto w-full">
-        <Link href="/" className="text-xl font-serif font-bold tracking-tight text-primary">
+        <Link href="/mistiqj" className="text-xl font-serif font-bold tracking-tight text-primary">
           Mistique Journey
         </Link>
         
         <div className="flex items-center gap-4 md:gap-8">
           <div className="hidden md:flex gap-6 text-sm font-medium text-muted-foreground">
-            <Link href="/" className="hover:text-primary transition-colors">{t.nav.home}</Link>
+            <Link href={lang === "th" ? "/th" : "/"} className="hover:text-primary transition-colors">{t.nav.job}</Link>
             <a href="https://forms.gle/FXdjKAYgnXpCRHnf8" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t.nav.apply}</a>
             <a href="https://forms.gle/2HVxMaWo2K5duALv5" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t.nav.refer}</a>
           </div>
