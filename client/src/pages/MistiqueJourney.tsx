@@ -22,9 +22,9 @@ const journeyElements = [
   { title: "Breathwork Meditation", description: "Guided breathing techniques for transformation", image: breathworkImage },
   { title: "Assisted Yoga", description: "Gentle guidance through beneficial postures", image: thaiYogaImage },
   { title: "Traditional Thai Massage", description: "Ancient healing techniques for releasing tension", image: skyTreatment },
-  { title: "Oil Massage", description: "Relaxing bodywork with therapeutic oils", image: oilMassageImage },
   { title: "Sauna", description: "Detoxifying heat therapy", image: saunaSitImage },
   { title: "Cold Bath", description: "Invigorating cold immersion", image: icebathImage },
+  { title: "Oil Massage", description: "Relaxing bodywork with therapeutic oils", image: oilMassageImage },
   { title: "Resting & Integration", description: "Peaceful completion of your journey", image: windingDownImage },
 ];
 

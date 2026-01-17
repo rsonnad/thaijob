@@ -22,9 +22,9 @@ const journeyElements = [
   { title: "การหายใจแบบสมาธิ", description: "เทคนิคการหายใจเพื่อการเปลี่ยนแปลง", image: breathworkImage },
   { title: "โยคะช่วยเหลือ", description: "การนำทางอย่างอ่อนโยนผ่านท่าทาง", image: thaiYogaImage },
   { title: "นวดแผนไทยดั้งเดิม", description: "เทคนิคการรักษาโบราณเพื่อคลายความตึงเครียด", image: skyTreatment },
-  { title: "นวดน้ำมัน", description: "การนวดผ่อนคลายด้วยน้ำมันบำบัด", image: oilMassageImage },
   { title: "ซาวน่า", description: "การบำบัดด้วยความร้อนเพื่อขับสารพิษ", image: saunaSitImage },
   { title: "อาบน้ำเย็น", description: "การแช่น้ำเย็นเพื่อกระตุ้นร่างกาย", image: icebathImage },
+  { title: "นวดน้ำมัน", description: "การนวดผ่อนคลายด้วยน้ำมันบำบัด", image: oilMassageImage },
   { title: "พักผ่อนและผสานรวม", description: "สิ้นสุดการเดินทางอย่างสงบ", image: windingDownImage },
 ];
 
