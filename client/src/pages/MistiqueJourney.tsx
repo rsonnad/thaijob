@@ -141,7 +141,7 @@ export default function MistiqueJourney() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-serif font-bold mb-6 drop-shadow-xl"
           >
-            <Link href="/mistiqj" className="underline hover:no-underline">Mistique Journey</Link>
+            Mistique Journey
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -176,10 +176,10 @@ export default function MistiqueJourney() {
 
       <main className="max-w-5xl mx-auto px-6 py-16 space-y-24">
         <section className="space-y-8">
-          <h2 className="text-3xl font-serif font-bold text-center">The <Link href="/mistiqj" className="underline hover:no-underline">Mistique Journey</Link> Experience</h2>
+          <h2 className="text-3xl font-serif font-bold text-center">The Mistique Journey Experience</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             <p>
-              The <Link href="/mistiqj" className="underline hover:no-underline">Mistique Journey</Link> is a shamanic breath and body experience. It is a 3-hour hands-on guided experience designed to enable deep physical and mental transformation in the body.
+              The Mistique Journey is a shamanic breath and body experience. It is a 3-hour hands-on guided experience designed to enable deep physical and mental transformation in the body.
             </p>
             <p>
               The Journey is a structured set of activities which encourage the participant to focus their breath on opening all the muscles that hold tension and block energetic flow. This process allows participants to progressively deepen their mental clarity and emotional regulation, while enabling both deep physical relaxation and invigoration.
@@ -193,7 +193,7 @@ export default function MistiqueJourney() {
         <section className="space-y-10">
           <h2 className="text-3xl font-serif font-bold text-center">Elements of the Journey</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-            The <Link href="/mistiqj" className="underline hover:no-underline">Mistique Journey</Link> combines various therapeutic elements to create a transformative experience
+            The Mistique Journey combines various therapeutic elements to create a transformative experience
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {journeyElements.map((element, i) => (
@@ -287,7 +287,7 @@ export default function MistiqueJourney() {
         <section className="space-y-8 bg-primary/5 p-8 md:p-12 rounded-3xl border border-primary/10">
           <h2 className="text-3xl font-serif font-bold text-center">Treatment Overview</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-            The <Link href="/mistiqj" className="underline hover:no-underline">Mistique Journey</Link> protocol is inspired by and fuses techniques from diverse sources
+            The Mistique Journey protocol is inspired by and fuses techniques from diverse sources
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {treatments.map((treatment, i) => (
@@ -328,11 +328,11 @@ export default function MistiqueJourney() {
 
       <footer className="py-10 border-t bg-muted/5 text-center text-muted-foreground">
         <div className="max-w-2xl mx-auto px-6 space-y-2">
-          <p className="text-sm font-sans font-bold text-primary"><Link href="/mistiqj" className="underline hover:no-underline">Mistique Journey</Link></p>
+          <p className="text-sm font-sans font-bold text-primary">Mistique Journey</p>
           <p className="text-[10px] font-light">
             <a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Alpaca Playhouse</a> @ Austin, Texas USA
           </p>
-          <p className="text-[8px] uppercase tracking-widest opacity-40 pt-2">© 2026 <Link href="/mistiqj" className="underline hover:no-underline">Mistique Journey</Link>. All rights reserved.</p>
+          <p className="text-[8px] uppercase tracking-widest opacity-40 pt-2">© 2026 Mistique Journey. All rights reserved.</p>
         </div>
       </footer>
     </div>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { useLanguage } from "@/hooks/use-language";
 import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,8 @@ import skylineTreatment from "@assets/sky_treatment_1768657655707.jpg";
 import saunaTubs from "@assets/Saunatubs_1768657655707.png";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const mistiqjPath = lang === "th" ? "/th/mistiqj" : "/mistiqj";
 
   return (
     <div className="min-h-screen w-full bg-[#faf9f6] selection:bg-primary/5">
@@ -183,7 +185,7 @@ export default function Home() {
             <h2 className="text-2xl font-sans font-bold">{t.project.title}</h2>
             <div className="space-y-2 text-base text-muted-foreground">
               <p className="font-bold text-primary">
-                <a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="hover:underline" data-testid="link-alpaca-playhouse-name">Alpaca Playhouse</a> – Mistique Journey
+                <a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="hover:underline" data-testid="link-alpaca-playhouse-name">Alpaca Playhouse</a> – <Link href={mistiqjPath} className="underline hover:no-underline">Mistique Journey</Link>
               </p>
               <p>
                 Hosted at <a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-alpaca-playhouse-location">Alpaca Playhouse</a>, a high-quality health and wellness center in Austin, Texas, USA.
@@ -238,9 +240,9 @@ export default function Home() {
 
       <footer className="py-10 border-t bg-muted/5 text-center text-muted-foreground">
         <div className="max-w-2xl mx-auto px-6 space-y-2">
-          <p className="text-sm font-sans font-bold text-primary">Mistique Journey</p>
+          <p className="text-sm font-sans font-bold text-primary"><Link href={mistiqjPath} className="underline hover:no-underline">Mistique Journey</Link></p>
           <p className="text-[10px] font-light"><a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="hover:underline" data-testid="link-alpaca-playhouse-footer">Alpaca Playhouse</a> @ Austin, Texas USA</p>
-          <p className="text-[8px] uppercase tracking-widest opacity-40 pt-2">© 2026 Mistique Journey. All rights reserved.</p>
+          <p className="text-[8px] uppercase tracking-widest opacity-40 pt-2">© 2026 <Link href={mistiqjPath} className="underline hover:no-underline">Mistique Journey</Link>. All rights reserved.</p>
         </div>
       </footer>
     </div>

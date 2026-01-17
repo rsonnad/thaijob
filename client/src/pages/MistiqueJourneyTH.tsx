@@ -141,7 +141,7 @@ export default function MistiqueJourneyTH() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-serif font-bold mb-6 drop-shadow-xl"
           >
-            <Link href="/th/mistiqj" className="underline hover:no-underline">Mistique Journey</Link>
+            Mistique Journey
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -176,10 +176,10 @@ export default function MistiqueJourneyTH() {
 
       <main className="max-w-5xl mx-auto px-6 py-16 space-y-24">
         <section className="space-y-8">
-          <h2 className="text-3xl font-serif font-bold text-center">ประสบการณ์ <Link href="/th/mistiqj" className="underline hover:no-underline">Mistique Journey</Link></h2>
+          <h2 className="text-3xl font-serif font-bold text-center">ประสบการณ์ Mistique Journey</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             <p>
-              <Link href="/th/mistiqj" className="underline hover:no-underline">Mistique Journey</Link> คือประสบการณ์การหายใจและร่างกายแบบชามาน เป็นประสบการณ์ลงมือทำ 3 ชั่วโมงที่ออกแบบมาเพื่อให้เกิดการเปลี่ยนแปลงทางกายภาพและจิตใจอย่างลึกซึ้ง
+              Mistique Journey คือประสบการณ์การหายใจและร่างกายแบบชามาน เป็นประสบการณ์ลงมือทำ 3 ชั่วโมงที่ออกแบบมาเพื่อให้เกิดการเปลี่ยนแปลงทางกายภาพและจิตใจอย่างลึกซึ้ง
             </p>
             <p>
               การเดินทางนี้คือชุดกิจกรรมที่มีโครงสร้าง ซึ่งส่งเสริมให้ผู้เข้าร่วมโฟกัสการหายใจเพื่อเปิดกล้ามเนื้อทุกส่วนที่เก็บความตึงเครียดและปิดกั้นการไหลของพลังงาน กระบวนการนี้ช่วยให้ผู้เข้าร่วมค่อยๆ ลึกซึ้งความชัดเจนทางจิตใจและการควบคุมอารมณ์
@@ -193,7 +193,7 @@ export default function MistiqueJourneyTH() {
         <section className="space-y-10">
           <h2 className="text-3xl font-serif font-bold text-center">องค์ประกอบของการเดินทาง</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-            <Link href="/th/mistiqj" className="underline hover:no-underline">Mistique Journey</Link> ผสมผสานองค์ประกอบการบำบัดหลากหลายเพื่อสร้างประสบการณ์เปลี่ยนแปลง
+            Mistique Journey ผสมผสานองค์ประกอบการบำบัดหลากหลายเพื่อสร้างประสบการณ์เปลี่ยนแปลง
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {journeyElements.map((element, i) => (
@@ -287,7 +287,7 @@ export default function MistiqueJourneyTH() {
         <section className="space-y-8 bg-primary/5 p-8 md:p-12 rounded-3xl border border-primary/10">
           <h2 className="text-3xl font-serif font-bold text-center">ภาพรวมการรักษา</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-            โปรโตคอล <Link href="/th/mistiqj" className="underline hover:no-underline">Mistique Journey</Link> ได้รับแรงบันดาลใจและผสานเทคนิคจากแหล่งที่หลากหลาย
+            โปรโตคอล Mistique Journey ได้รับแรงบันดาลใจและผสานเทคนิคจากแหล่งที่หลากหลาย
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {treatments.map((treatment, i) => (
@@ -328,11 +328,11 @@ export default function MistiqueJourneyTH() {
 
       <footer className="py-10 border-t bg-muted/5 text-center text-muted-foreground">
         <div className="max-w-2xl mx-auto px-6 space-y-2">
-          <p className="text-sm font-sans font-bold text-primary"><Link href="/th/mistiqj" className="underline hover:no-underline">Mistique Journey</Link></p>
+          <p className="text-sm font-sans font-bold text-primary">Mistique Journey</p>
           <p className="text-[10px] font-light">
             <a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Alpaca Playhouse</a> @ ออสติน เท็กซัส สหรัฐอเมริกา
           </p>
-          <p className="text-[8px] uppercase tracking-widest opacity-40 pt-2">© 2026 <Link href="/th/mistiqj" className="underline hover:no-underline">Mistique Journey</Link>. สงวนลิขสิทธิ์.</p>
+          <p className="text-[8px] uppercase tracking-widest opacity-40 pt-2">© 2026 Mistique Journey. สงวนลิขสิทธิ์.</p>
         </div>
       </footer>
     </div>
