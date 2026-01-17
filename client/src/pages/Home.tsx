@@ -8,6 +8,7 @@ import referralBonus from "@assets/referral_bonus_1768629875681.png";
 import robotMassage from "@assets/Robot_Copy_Massage_1768629875681.jpg";
 import skylineTreatment from "@assets/skyline_treatment_1768629875681.png";
 import skyTourist from "@assets/sky_tourist_1768632009798.png";
+import saunaTubs from "@assets/saunatubs_1768636996296.png";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -151,6 +152,11 @@ export default function Home() {
             <p className="flex gap-3 items-start"><Briefcase className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.compensation.equity}</p>
           </div>
         </section>
+
+        {/* Sauna & Tubs Image */}
+        <div className="rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto">
+          <img src={saunaTubs} alt="Sauna and Tubs Experience" className="w-full h-auto object-cover" data-testid="img-sauna-tubs" />
+        </div>
 
         {/* About & Interview */}
         <section className="space-y-12 border-t pt-16">
