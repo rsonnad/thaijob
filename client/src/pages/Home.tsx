@@ -224,7 +224,7 @@ export default function Home() {
           </Button>
 
           <div className="rounded-2xl overflow-hidden shadow-lg max-w-xs mx-auto mt-12">
-            <img src={skylineTreatment} alt="Treatment Experience" className="w-full h-auto object-cover" />
+            <img src={beachWork} alt="Beach Massage Experience" className="w-full h-auto object-cover" />
           </div>
 
           <div className="pt-4 space-y-4">
