@@ -1,189 +1,231 @@
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactSchema } from "@shared/schema";
-import { useCreateContact } from "@/hooks/use-contact";
+import { insertApplicationSchema, insertReferralSchema } from "@shared/schema";
+import { useLanguage } from "@/hooks/use-language";
 import { Navigation } from "@/components/Navigation";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
+import { Loader2, Plane, Heart, Users, DollarSign, CheckCircle2 } from "lucide-react";
+import beachWork from "@assets/beach_work_1768629875681.png";
+import referralBonus from "@assets/referral_bonus_1768629875681.png";
+import robotMassage from "@assets/Robot_Copy_Massage_1768629875681.jpg";
+import skylineTreatment from "@assets/skyline_treatment_1768629875681.png";
 
 export default function Home() {
-  const mutation = useCreateContact();
-  
-  const form = useForm({
-    resolver: zodResolver(insertContactSchema),
-    defaultValues: {
-      email: "",
-      message: ""
-    }
+  const { t } = useLanguage();
+  const { toast } = useToast();
+
+  const applyForm = useForm({
+    resolver: zodResolver(insertApplicationSchema),
+    defaultValues: { name: "", email: "", phone: "", experience: "", message: "" }
   });
 
-  const onSubmit = (data: any) => {
-    mutation.mutate(data, {
-      onSuccess: () => {
-        form.reset();
-      }
-    });
+  const referForm = useForm({
+    resolver: zodResolver(insertReferralSchema),
+    defaultValues: { referrerName: "", referrerEmail: "", candidateName: "", candidateContact: "" }
+  });
+
+  const onApply = async (data: any) => {
+    try {
+      await apiRequest("POST", "/api/applications", data);
+      toast({ title: t.applyForm.success });
+      applyForm.reset();
+    } catch (e) {
+      toast({ title: "Error", description: "Failed to submit application", variant: "destructive" });
+    }
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.15,
-        duration: 0.8,
-        ease: [0.215, 0.61, 0.355, 1.0]
-      }
-    })
+  const onRefer = async (data: any) => {
+    try {
+      await apiRequest("POST", "/api/referrals", data);
+      toast({ title: t.referForm.success });
+      referForm.reset();
+    } catch (e) {
+      toast({ title: "Error", description: "Failed to submit referral", variant: "destructive" });
+    }
   };
 
   return (
     <div className="min-h-screen w-full bg-background selection:bg-primary/5">
       <Navigation />
 
-      <main className="max-w-3xl mx-auto px-6 pt-32 pb-24 md:pt-48 md:pb-32">
-        {/* Hero Section */}
-        <section className="mb-24 md:mb-32">
+      {/* Hero Section */}
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${beachWork})` }}
+        >
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+        </div>
+        
+        <div className="relative z-10 max-w-4xl px-6 text-center text-white">
           <motion.h1 
-            custom={0}
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.95] tracking-tight mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-serif font-bold mb-6"
           >
-            Welcome<span className="text-primary/20">.</span>
+            {t.hero.title}
           </motion.h1>
-          
-          <motion.div 
-            custom={1}
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="w-24 h-1 bg-primary mb-12"
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto"
+          >
+            {t.hero.subtitle}
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Button size="lg" className="bg-white text-black hover:bg-white/90" asChild>
+              <a href="#apply">{t.hero.apply}</a>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      <main className="max-w-7xl mx-auto px-6 py-24 space-y-32">
+        {/* Core Description */}
+        <section className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h2 className="text-4xl font-serif font-bold">{t.requirements.title}</h2>
+            <ul className="space-y-4">
+              {t.requirements.items.map((item: string, i: number) => (
+                <li key={i} className="flex gap-3 items-start text-lg text-muted-foreground">
+                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <img src={skylineTreatment} alt="Treatment" className="w-full h-auto" />
+          </div>
+        </section>
+
+        {/* Work & AI Section */}
+        <section className="bg-secondary/30 rounded-3xl p-8 md:p-16 grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1 rounded-2xl overflow-hidden">
+            <img src={robotMassage} alt="Robotics Training" className="w-full h-auto" />
+          </div>
+          <div className="order-1 md:order-2 space-y-6">
+            <h2 className="text-4xl font-serif font-bold">{t.work.title}</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {t.work.description}
+            </p>
+            <div className="p-4 bg-primary/5 border border-primary/10 rounded-xl text-primary font-medium">
+              {t.work.noErotic}
+            </div>
+          </div>
+        </section>
+
+        {/* Compensation & Travel */}
+        <section className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="p-8 space-y-4">
+            <DollarSign className="w-12 h-12 mx-auto text-primary" />
+            <h3 className="text-2xl font-bold">{t.compensation.salary}</h3>
+            <p className="text-muted-foreground">{t.compensation.bonus}</p>
+          </div>
+          <div className="p-8 space-y-4">
+            <Plane className="w-12 h-12 mx-auto text-primary" />
+            <h3 className="text-2xl font-bold">{t.compensation.travel}</h3>
+            <p className="text-muted-foreground">Thailand, Vietnam, Bali, India, USA, Europe</p>
+          </div>
+          <div className="p-8 space-y-4">
+            <Users className="w-12 h-12 mx-auto text-primary" />
+            <h3 className="text-2xl font-bold">Community</h3>
+            <p className="text-muted-foreground">Join wellness festivals and biohacking conferences worldwide</p>
+          </div>
+        </section>
+
+        {/* Referral Section */}
+        <section id="refer" className="relative rounded-3xl overflow-hidden min-h-[500px] flex items-center">
+          <div 
+            className="absolute inset-0 z-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${referralBonus})` }}
           />
-
-          <motion.div
-            custom={2}
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="prose prose-lg md:prose-xl prose-neutral font-sans text-muted-foreground"
-          >
-            <p className="leading-relaxed">
-              We believe in the power of simplicity. In a world full of noise, clarity is a luxury. 
-              Our mission is to strip away the unessential, revealing the core of what truly matters.
-            </p>
-          </motion.div>
-        </section>
-
-        {/* Text Content Section */}
-        <section className="mb-32">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1 }}
-            className="space-y-8 text-lg md:text-xl leading-relaxed font-light text-foreground/80"
-          >
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
-              eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            </p>
-            <blockquote className="pl-6 border-l-2 border-primary/20 italic font-serif text-2xl md:text-3xl text-primary my-12 py-2">
-              "Design is not just what it looks like and feels like. Design is how it works."
-            </blockquote>
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
-              qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-              adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            </p>
-          </motion.div>
-        </section>
-
-        {/* Contact Form Section */}
-        <section id="contact" className="relative">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-secondary/30 p-8 md:p-12 rounded-2xl border border-border/50"
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-2">Get in touch</h2>
-            <p className="text-muted-foreground mb-8">We'd love to hear your thoughts.</p>
-
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base font-medium">Email Address</FormLabel>
-                      <FormControl>
-                        <Input 
-                          placeholder="hello@example.com" 
-                          className="bg-background border-border/50 focus:border-primary/50 h-12 text-lg transition-all" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base font-medium">Message</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Tell us something..." 
-                          className="bg-background border-border/50 focus:border-primary/50 min-h-[160px] text-lg resize-none transition-all" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <div className="pt-4">
-                  <Button 
-                    type="submit" 
-                    disabled={mutation.isPending}
-                    className="w-full md:w-auto px-8 py-6 text-lg rounded-none md:rounded-lg font-medium transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg"
-                  >
-                    {mutation.isPending ? (
-                      <>
-                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      "Send Message"
-                    )}
-                  </Button>
+          <div className="absolute inset-0 bg-black/60 z-10" />
+          <div className="relative z-20 max-w-2xl p-8 md:p-16 text-white space-y-6">
+            <h2 className="text-4xl font-serif font-bold">{t.referral.title}</h2>
+            <p className="text-xl font-light opacity-90">{t.referral.description}</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
+                <p className="text-sm opacity-70">Step 1</p>
+                <p className="font-bold">{t.referral.reward1}</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
+                <p className="text-sm opacity-70">Step 2</p>
+                <p className="font-bold">{t.referral.reward2}</p>
+              </div>
+            </div>
+            <Form {...referForm}>
+              <form onSubmit={referForm.handleSubmit(onRefer)} className="space-y-4 mt-8">
+                <div className="grid grid-cols-2 gap-4">
+                  <FormField control={referForm.control} name="referrerName" render={({ field }) => (
+                    <FormItem><Input placeholder={t.referForm.referrerName} className="bg-white/10 border-white/20 text-white placeholder:text-white/50" {...field} /></FormItem>
+                  )} />
+                  <FormField control={referForm.control} name="referrerEmail" render={({ field }) => (
+                    <FormItem><Input placeholder={t.referForm.referrerEmail} className="bg-white/10 border-white/20 text-white placeholder:text-white/50" {...field} /></FormItem>
+                  )} />
                 </div>
+                <FormField control={referForm.control} name="candidateName" render={({ field }) => (
+                  <FormItem><Input placeholder={t.referForm.candidateName} className="bg-white/10 border-white/20 text-white placeholder:text-white/50" {...field} /></FormItem>
+                )} />
+                <FormField control={referForm.control} name="candidateContact" render={({ field }) => (
+                  <FormItem><Input placeholder={t.referForm.candidateContact} className="bg-white/10 border-white/20 text-white placeholder:text-white/50" {...field} /></FormItem>
+                )} />
+                <Button type="submit" className="w-full bg-white text-black hover:bg-white/90">
+                  {t.referForm.submit}
+                </Button>
               </form>
             </Form>
-          </motion.div>
+          </div>
         </section>
 
-        <footer className="mt-32 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground/60">
-          <p>© {new Date().getFullYear()} Minimal Content. All rights reserved.</p>
-        </footer>
+        {/* Application Form */}
+        <section id="apply" className="max-w-2xl mx-auto space-y-8">
+          <div className="text-center space-y-2">
+            <h2 className="text-4xl font-serif font-bold">{t.applyForm.title}</h2>
+            <p className="text-muted-foreground">Join our global wellness journey</p>
+          </div>
+          
+          <Form {...applyForm}>
+            <form onSubmit={applyForm.handleSubmit(onApply)} className="space-y-6 bg-card p-8 rounded-2xl border">
+              <div className="grid md:grid-cols-2 gap-6">
+                <FormField control={applyForm.control} name="name" render={({ field }) => (
+                  <FormItem><FormLabel>{t.applyForm.name}</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                )} />
+                <FormField control={applyForm.control} name="email" render={({ field }) => (
+                  <FormItem><FormLabel>{t.applyForm.email}</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                )} />
+              </div>
+              <FormField control={applyForm.control} name="phone" render={({ field }) => (
+                <FormItem><FormLabel>{t.applyForm.phone}</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+              )} />
+              <FormField control={applyForm.control} name="experience" render={({ field }) => (
+                <FormItem><FormLabel>{t.applyForm.experience}</FormLabel><FormControl><Textarea className="min-h-[100px]" {...field} /></FormControl><FormMessage /></FormItem>
+              )} />
+              <FormField control={applyForm.control} name="message" render={({ field }) => (
+                <FormItem><FormLabel>{t.applyForm.message}</FormLabel><FormControl><Textarea className="min-h-[100px]" {...field} /></FormControl><FormMessage /></FormItem>
+              )} />
+              <Button type="submit" className="w-full py-6 text-lg" disabled={applyForm.formState.isSubmitting}>
+                {applyForm.formState.isSubmitting ? <Loader2 className="animate-spin" /> : t.applyForm.submit}
+              </Button>
+            </form>
+          </Form>
+        </section>
       </main>
+
+      <footer className="py-12 border-t text-center text-muted-foreground">
+        <p>© 2026 Mistique Journey. Alpaca Playhouse.</p>
+      </footer>
     </div>
   );
 }
