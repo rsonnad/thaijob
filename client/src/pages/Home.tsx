@@ -51,7 +51,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button size="lg" className="bg-white text-black hover:bg-white/90 h-12 px-10 rounded-full font-bold w-full sm:w-auto shadow-xl" asChild>
-              <a href="https://forms.gle/placeholder" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/FXdjKAYgnXpCRHnf8" target="_blank" rel="noopener noreferrer">
                 {t.hero.apply}
               </a>
             </Button>
@@ -82,7 +82,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Button size="lg" className="h-10 px-10 rounded-full font-bold" asChild>
-              <a href="https://forms.gle/placeholder-refer" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/2HVxMaWo2K5duALv5" target="_blank" rel="noopener noreferrer">
                 {t.referForm.submit}
               </a>
             </Button>
@@ -195,7 +195,7 @@ export default function Home() {
           <h2 className="text-2xl font-sans font-bold">{t.applyForm.title}</h2>
           <p className="text-base text-muted-foreground font-light">Interested applicants: Fill out the application form here</p>
           <Button size="lg" className="h-12 px-12 text-lg font-bold rounded-full transition-all hover:shadow-lg active:scale-[0.98]" asChild>
-            <a href="https://forms.gle/placeholder" target="_blank" rel="noopener noreferrer">
+            <a href="https://forms.gle/FXdjKAYgnXpCRHnf8" target="_blank" rel="noopener noreferrer">
               {t.applyForm.submit}
             </a>
           </Button>
