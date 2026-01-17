@@ -1,8 +1,8 @@
 export const en = {
   hero: {
-    title: "Mistique Journey",
-    subtitle: "Global Traveling Massage Therapist & Fitness Trainer",
-    description: "We are seeking a travel-ready massage therapist who loves wellness, fitness, and personal growth to help promote a new spa concept.",
+    label: "Job Opening: Global Traveling Massage Therapist & Fitness Trainer",
+    title: "Mistique Journey @ the Alpaca Playhouse, Austin Texas USA",
+    subtitle: "We are seeking a travel-ready massage therapist who loves wellness, fitness, and personal growth to help promote a new spa concept.",
     apply: "Apply Now",
   },
   referral: {
@@ -61,9 +61,9 @@ export const en = {
 
 export const th = {
   hero: {
-    title: "Mistique Journey",
-    subtitle: "รับสมัครงาน: นักนวดบำบัด & เทรนเนอร์ฟิตเนส เดินทางทั่วโลก",
-    description: "เรากำลังมองหานักนวดบำบัดที่พร้อมเดินทาง มีใจรักสุขภาพ เพื่อร่วมโปรโมตสปาคอนเซ็ปต์ใหม่และฝึก AI หุ่นยนต์",
+    label: "รับสมัครงาน: นักนวดบำบัด & เทรนเนอร์ฟิตเนส เดินทางทั่วโลก",
+    title: "Mistique Journey @ Alpaca Playhouse, ออสติน เท็กซัส สหรัฐอเมริกา",
+    subtitle: "เรากำลังมองหานักนวดบำบัดที่พร้อมเดินทาง มีใจรักสุขภาพ เพื่อร่วมโปรโมตสปาคอนเซ็ปต์ใหม่และฝึก AI หุ่นยนต์",
     apply: "สมัครงาน",
   },
   referral: {
