@@ -13,6 +13,7 @@ import icebathImage from "@assets/Icebath_1768661286594.jpg";
 import oilMassageImage from "@assets/oil_massage_1768661744672.jpg";
 import saunaSitImage from "@assets/Sauna_Sit_1768661809468.jpg";
 import windingDownImage from "@assets/windingdown_1768661823894.jpg";
+import windDownImage from "@assets/Wind_down_1768662069089.jpg";
 
 const journeyElements = [
   { title: "Online Intake Survey", description: "Personalized preparation for your journey", image: surveyImage },
@@ -200,7 +201,7 @@ export default function MistiqueJourney() {
 
         <section className="space-y-8 bg-white p-8 md:p-12 rounded-3xl border">
           <div className="max-w-sm mx-auto rounded-2xl overflow-hidden shadow-md mb-6">
-            <img src={somaticsImage} alt="Somatics Experience" className="w-full h-auto object-cover" />
+            <img src={windDownImage} alt="Wind Down Experience" className="w-full h-auto object-cover" />
           </div>
           <h2 className="text-3xl font-serif font-bold text-center">What Others Have Experienced</h2>
           <div className="space-y-6 max-w-3xl mx-auto">
