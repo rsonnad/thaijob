@@ -1,6 +1,6 @@
 export const en = {
   hero: {
-    label: "Job Opening: Global Traveling Massage Therapist & Fitness Trainer",
+    label: "Job Opening: Global Traveling Massage Therapist & Fitness Ambassador",
     title: "Mistique Journey @ the Alpaca Playhouse, Austin Texas USA",
     subtitle: "We are seeking a travel-ready massage therapist who loves wellness, fitness, and personal growth to help promote a new spa concept.",
     apply: "Apply Now",
@@ -100,7 +100,7 @@ export const en = {
 
 export const th = {
   hero: {
-    label: "ประกาศรับสมัครงาน: นักนวดและเทรนเนอร์ฟิตเนส เดินทางทั่วโลก (ผู้หญิง)",
+    label: "ประกาศรับสมัครงาน: นักนวดและแอมบาสเดอร์ฟิตเนส เดินทางทั่วโลก (ผู้หญิง)",
     title: "Mistique Journey @ Alpaca Playhouse, เมืองออสติน รัฐเท็กซัส สหรัฐอเมริกา",
     subtitle: "เรากำลังมองหานักนวดบำบัดที่พร้อมเดินทาง มีใจรักสุขภาพ เพื่อร่วมโปรโมตสปาคอนเซ็ปต์ใหม่และฝึก AI หุ่นยนต์",
     apply: "สมัครงาน",
