@@ -47,7 +47,7 @@ export const en = {
       "Robotics Training",
     ],
     femaleFocus: "Product is focused on a female demographic, so most clients will be women",
-    noErotic: "❌ No erotic or sexual touch allowed.",
+    noErotic: "❌ No erotic or sexual touch permitted.",
   },
   compensation: {
     title: "💸 Compensation",
@@ -142,7 +142,7 @@ export const th = {
       "การฝึกหุ่นยนต์ (Robotics Training)",
     ],
     femaleFocus: "กลุ่มเป้าหมายเป็น ผู้หญิง ลูกค้าส่วนใหญ่จึงเป็นผู้หญิง",
-    noErotic: "❌ ไม่อนุญาตการสัมผัสเชิงอีโรติกหรือทางเพศใด ๆ",
+    noErotic: "❌ ไม่อนุญาตการสัมผัสเชิงอีโรติกหรือทางเพศใด ๆ (ไม่อนุญาต)",
   },
   compensation: {
     title: "💸 ค่าตอบแทน",

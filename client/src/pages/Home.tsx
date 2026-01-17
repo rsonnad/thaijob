@@ -12,7 +12,7 @@ export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen w-full bg-background selection:bg-primary/5">
+    <div className="min-h-screen w-full bg-[#faf9f6] selection:bg-primary/5">
       <Navigation />
 
       {/* Hero Section */}
@@ -60,26 +60,26 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="max-w-4xl mx-auto px-6 space-y-20 py-16">
+      <main className="max-w-4xl mx-auto px-6 space-y-16 py-12">
         {/* Referral Section */}
-        <section id="refer" className="space-y-8 bg-card p-8 md:p-12 rounded-3xl border shadow-sm">
-          <div className="max-w-md mx-auto rounded-2xl overflow-hidden shadow-md mb-8">
+        <section id="refer" className="space-y-6 bg-white p-8 md:p-10 rounded-3xl border shadow-sm">
+          <div className="max-w-sm mx-auto rounded-2xl overflow-hidden shadow-md mb-6">
             <img src={referralBonus} alt="Referral Bonus" className="w-full h-auto object-cover" />
           </div>
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl font-serif font-bold">{t.referral.title}</h2>
-            <p className="text-lg font-light text-muted-foreground">{t.referral.description}</p>
+          <div className="text-center space-y-3">
+            <h2 className="text-2xl font-sans font-bold">{t.referral.title}</h2>
+            <p className="text-base font-light text-muted-foreground">{t.referral.description}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="bg-primary/5 p-5 rounded-xl border border-primary/10 text-center">
-              <p className="text-lg font-bold text-primary">{t.referral.reward1}</p>
+            <div className="bg-primary/5 p-4 rounded-xl border border-primary/10 text-center">
+              <p className="text-base font-bold text-primary">{t.referral.reward1}</p>
             </div>
-            <div className="bg-primary/5 p-5 rounded-xl border border-primary/10 text-center">
-              <p className="text-lg font-bold text-primary">{t.referral.reward2}</p>
+            <div className="bg-primary/5 p-4 rounded-xl border border-primary/10 text-center">
+              <p className="text-base font-bold text-primary">{t.referral.reward2}</p>
             </div>
           </div>
           <div className="flex justify-center">
-            <Button size="lg" className="h-12 px-12 rounded-full font-bold" asChild>
+            <Button size="lg" className="h-10 px-10 rounded-full font-bold" asChild>
               <a href="https://forms.gle/placeholder-refer" target="_blank" rel="noopener noreferrer">
                 {t.referForm.submit}
               </a>
@@ -88,121 +88,124 @@ export default function Home() {
         </section>
 
         {/* Requirements */}
-        <section className="space-y-10">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold">{t.requirements.title}</h2>
-            <ul className="space-y-4">
+        <section className="space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-sans font-bold">{t.requirements.title}</h2>
+            <ul className="space-y-2">
               {t.requirements.items.map((item: string, i: number) => (
-                <li key={i} className="flex gap-4 items-start text-lg text-muted-foreground leading-snug">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
+                <li key={i} className="flex gap-3 items-start text-base text-muted-foreground leading-snug">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg max-w-sm mx-auto">
+          <div className="rounded-2xl overflow-hidden shadow-lg max-w-xs mx-auto">
             <img src={skylineTreatment} alt="Treatment" className="w-full h-auto object-cover" />
           </div>
         </section>
 
         {/* Travel */}
-        <section className="space-y-6">
-          <h2 className="text-3xl font-serif font-bold">{t.travel.title}</h2>
-          <div className="space-y-4 text-lg text-muted-foreground">
-            <p className="flex gap-3 items-start"><MapPin className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.travel.description}</p>
-            <p className="flex gap-3 items-start"><DollarSign className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.travel.costs}</p>
-            <p className="flex gap-3 items-start"><Star className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.travel.participation}</p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-sans font-bold">{t.travel.title}</h2>
+          <div className="space-y-2 text-base text-muted-foreground">
+            <p className="flex gap-3 items-start"><MapPin className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.travel.description}</p>
+            <p className="flex gap-3 items-start"><DollarSign className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.travel.costs}</p>
+            <p className="flex gap-3 items-start"><Star className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.travel.participation}</p>
           </div>
         </section>
 
         {/* Work & AI */}
-        <section className="space-y-10">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold">{t.work.title}</h2>
-            <div className="space-y-4 text-lg text-muted-foreground">
-              <p className="flex gap-3 items-start"><Clock className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.work.hours}</p>
-              <div className="space-y-2 pl-9">
+        <section className="space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-sans font-bold">{t.work.title}</h2>
+            <div className="space-y-3 text-base text-muted-foreground">
+              <p className="flex gap-3 items-start"><Clock className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.work.hours}</p>
+              <div className="space-y-1 pl-8">
                 {t.work.tasks.map((task: string, i: number) => (
                   <p key={i} className="flex gap-2 items-center">• {task}</p>
                 ))}
               </div>
-              <p className="flex gap-3 items-start"><Users className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.work.femaleFocus}</p>
-              <div className="p-4 bg-primary/5 border border-primary/10 rounded-xl text-primary font-medium flex gap-3 items-center">
-                <span className="text-xl shrink-0">✨</span>
+              <p className="flex gap-3 items-start"><Users className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.work.femaleFocus}</p>
+              <div className="p-3 bg-primary/5 border border-primary/10 rounded-xl text-primary font-medium flex gap-2 items-center text-sm">
+                <span className="text-lg shrink-0">✨</span>
                 {t.work.noErotic}
               </div>
             </div>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-md max-w-sm mx-auto">
+          <div className="rounded-2xl overflow-hidden shadow-md max-w-xs mx-auto">
             <img src={robotMassage} alt="Robotics Training" className="w-full h-auto object-cover" />
           </div>
         </section>
 
         {/* Compensation */}
-        <section className="space-y-6">
-          <h2 className="text-3xl font-serif font-bold">{t.compensation.title}</h2>
-          <div className="grid gap-4 text-lg text-muted-foreground">
-            <p className="flex gap-3 items-start font-bold text-primary"><DollarSign className="w-6 h-6 shrink-0 mt-1" /> {t.compensation.salary}</p>
-            <p className="flex gap-3 items-start"><Star className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.compensation.increases}</p>
-            <p className="flex gap-3 items-start"><Info className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.compensation.costs}</p>
-            <p className="flex gap-3 items-start font-light italic pl-9">{t.compensation.lodging}</p>
-            <p className="flex gap-3 items-start"><Star className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.compensation.extra}</p>
-            <p className="flex gap-3 items-start"><Briefcase className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.compensation.equity}</p>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-sans font-bold">{t.compensation.title}</h2>
+          <div className="grid gap-2 text-base text-muted-foreground">
+            <p className="flex gap-3 items-start font-bold text-primary"><DollarSign className="w-5 h-5 shrink-0 mt-1" /> {t.compensation.salary}</p>
+            <p className="flex gap-3 items-start"><Star className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.compensation.increases}</p>
+            <p className="flex gap-3 items-start"><Info className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.compensation.costs}</p>
+            <p className="flex gap-3 items-start font-light italic pl-8 text-sm">{t.compensation.lodging}</p>
+            <p className="flex gap-3 items-start"><Star className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.compensation.extra}</p>
+            <p className="flex gap-3 items-start"><Briefcase className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.compensation.equity}</p>
           </div>
         </section>
 
         {/* About & Interview */}
-        <section className="space-y-10 border-t pt-20">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold">{t.project.title}</h2>
-            <div className="space-y-4 text-lg text-muted-foreground">
+        <section className="space-y-12 border-t pt-16">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-sans font-bold">{t.project.title}</h2>
+            <div className="space-y-2 text-base text-muted-foreground">
               <p className="font-bold text-primary">{t.project.name}</p>
               <p>{t.project.location}</p>
               <p>{t.project.feedback}</p>
             </div>
           </div>
           
-          <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold">{t.interview.title}</h2>
-            <div className="space-y-4 text-lg text-muted-foreground">
-              <p className="flex gap-3 items-start"><MapPin className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.interview.locations}</p>
-              <p className="flex gap-3 items-start"><Clock className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.interview.dates}</p>
-              <p className="flex gap-3 items-start font-bold text-primary"><Star className="w-6 h-6 shrink-0 mt-1" /> {t.interview.audition}</p>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-sans font-bold">{t.interview.title}</h2>
+            <div className="space-y-2 text-base text-muted-foreground">
+              <p className="flex gap-3 items-start"><MapPin className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.interview.locations}</p>
+              <p className="flex gap-3 items-start"><Clock className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.interview.dates}</p>
+              <p className="flex gap-3 items-start font-bold text-primary"><Star className="w-5 h-5 shrink-0 mt-1" /> {t.interview.audition}</p>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold">{t.trial.title}</h2>
-            <div className="space-y-4 text-lg text-muted-foreground">
-              <p className="flex gap-3 items-start"><CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.trial.week}</p>
-              <p className="flex gap-3 items-start"><CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.trial.months}</p>
-              <p className="flex gap-3 items-start"><CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.trial.longterm}</p>
-              <p className="flex gap-3 items-start"><CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" /> {t.trial.relocation}</p>
-              <p className="flex gap-3 items-start font-bold text-primary"><Info className="w-6 h-6 shrink-0 mt-1" /> {t.trial.visas}</p>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-sans font-bold">{t.trial.title}</h2>
+            <div className="space-y-2 text-base text-muted-foreground">
+              <p className="flex gap-3 items-start"><CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.trial.week}</p>
+              <p className="flex gap-3 items-start"><CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.trial.months}</p>
+              <p className="flex gap-3 items-start"><CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.trial.longterm}</p>
+              <p className="flex gap-3 items-start"><CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" /> {t.trial.relocation}</p>
+              <p className="flex gap-3 items-start font-bold text-primary"><Info className="w-5 h-5 shrink-0 mt-1" /> {t.trial.visas}</p>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section id="apply" className="text-center space-y-8 py-12 border-t pt-20">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight">{t.applyForm.title}</h2>
-          <p className="text-lg text-muted-foreground font-light">Interested applicants: Fill out the application form here</p>
-          <Button size="lg" className="h-14 px-16 text-xl font-bold rounded-full transition-all hover:shadow-xl active:scale-[0.98]" asChild>
+        <section id="apply" className="text-center space-y-6 py-12 border-t pt-16">
+          <h2 className="text-2xl font-sans font-bold">{t.applyForm.title}</h2>
+          <p className="text-base text-muted-foreground font-light">Interested applicants: Fill out the application form here</p>
+          <Button size="lg" className="h-12 px-12 text-lg font-bold rounded-full transition-all hover:shadow-lg active:scale-[0.98]" asChild>
             <a href="https://forms.gle/placeholder" target="_blank" rel="noopener noreferrer">
               {t.applyForm.submit}
             </a>
           </Button>
-          <div className="pt-8">
-            <p className="text-muted-foreground">Questions: <a href="mailto:alpacaplayhouse@gmail.com" className="text-primary font-medium hover:underline">alpacaplayhouse@gmail.com</a></p>
+          <div className="pt-4 space-y-4">
+            <Button variant="link" className="text-primary font-medium" asChild>
+              <a href="#refer" className="text-lg">Refer a friend</a>
+            </Button>
+            <p className="text-sm text-muted-foreground">Questions: <a href="mailto:alpacaplayhouse@gmail.com" className="text-primary font-medium hover:underline">alpacaplayhouse@gmail.com</a></p>
           </div>
         </section>
       </main>
 
-      <footer className="py-12 border-t bg-muted/10 text-center text-muted-foreground">
+      <footer className="py-10 border-t bg-muted/5 text-center text-muted-foreground">
         <div className="max-w-2xl mx-auto px-6 space-y-2">
-          <p className="text-base font-serif font-bold text-primary">Mistique Journey</p>
-          <p className="text-xs font-light">Alpaca Playhouse @ Austin, Texas USA</p>
-          <p className="text-[10px] uppercase tracking-widest opacity-40 pt-4">© 2026 Mistique Journey. All rights reserved.</p>
+          <p className="text-sm font-sans font-bold text-primary">Mistique Journey</p>
+          <p className="text-[10px] font-light">Alpaca Playhouse @ Austin, Texas USA</p>
+          <p className="text-[8px] uppercase tracking-widest opacity-40 pt-2">© 2026 Mistique Journey. All rights reserved.</p>
         </div>
       </footer>
     </div>
