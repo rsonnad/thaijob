@@ -163,8 +163,12 @@ export default function Home() {
           <div className="space-y-4">
             <h2 className="text-2xl font-sans font-bold">{t.project.title}</h2>
             <div className="space-y-2 text-base text-muted-foreground">
-              <p className="font-bold text-primary">{t.project.name}</p>
-              <p>{t.project.location}</p>
+              <p className="font-bold text-primary">
+                <a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="hover:underline" data-testid="link-alpaca-playhouse-name">Alpaca Playhouse</a> – Mistique Journey
+              </p>
+              <p>
+                Hosted at <a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline" data-testid="link-alpaca-playhouse-location">Alpaca Playhouse</a>, a high-quality health and wellness center in Austin, Texas, USA.
+              </p>
               <p>{t.project.feedback}</p>
             </div>
           </div>
@@ -216,7 +220,7 @@ export default function Home() {
       <footer className="py-10 border-t bg-muted/5 text-center text-muted-foreground">
         <div className="max-w-2xl mx-auto px-6 space-y-2">
           <p className="text-sm font-sans font-bold text-primary">Mistique Journey</p>
-          <p className="text-[10px] font-light">Alpaca Playhouse @ Austin, Texas USA</p>
+          <p className="text-[10px] font-light"><a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="hover:underline" data-testid="link-alpaca-playhouse-footer">Alpaca Playhouse</a> @ Austin, Texas USA</p>
           <p className="text-[8px] uppercase tracking-widest opacity-40 pt-2">© 2026 Mistique Journey. All rights reserved.</p>
         </div>
       </footer>
