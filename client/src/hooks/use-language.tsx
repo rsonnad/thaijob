@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { useLocation } from "wouter";
 import { en, th } from "../translations";
 
 type Language = "en" | "th";
@@ -12,12 +13,19 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Language>("en");
+  const [location] = useLocation();
+  const isThaiRoute = location.startsWith("/th");
+  
+  const [lang, setLang] = useState<Language>(isThaiRoute ? "th" : "en");
 
   useEffect(() => {
-    const isThai = navigator.language.toLowerCase().includes("th");
-    setLang(isThai ? "th" : "en");
-  }, []);
+    if (isThaiRoute) {
+      setLang("th");
+    } else if (location === "/" || location === "") {
+      const isThai = navigator.language.toLowerCase().includes("th");
+      setLang(isThai ? "th" : "en");
+    }
+  }, [location, isThaiRoute]);
 
   const t = lang === "en" ? en : th;
 

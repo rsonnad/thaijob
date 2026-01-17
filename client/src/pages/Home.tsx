@@ -33,7 +33,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-[0.05em] uppercase mb-4 text-white drop-shadow-xl"
           >
-            {t.hero.label}
+            <span className="text-3xl md:text-5xl">📢</span> {t.hero.label}
           </motion.p>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -71,6 +71,16 @@ export default function Home() {
           <p className="text-base text-muted-foreground leading-relaxed">
             {t.intro.paragraph2}
           </p>
+          {t.intro.paragraph3 && (
+            <p className="text-base text-muted-foreground leading-relaxed">
+              {t.intro.paragraph3}
+            </p>
+          )}
+          {t.intro.closing && (
+            <p className="text-base text-primary font-medium leading-relaxed">
+              {t.intro.closing} <span className="text-lg">✨</span>
+            </p>
+          )}
         </section>
 
         {/* Referral Section */}
