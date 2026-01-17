@@ -41,7 +41,7 @@ export default function Home() {
             transition={{ delay: 0.1 }}
             className="text-xl md:text-2xl font-serif font-normal mb-10 text-white/90 drop-shadow-md"
           >
-            {t.hero.title}
+            Mistique Journey @ the <a href="https://alpacaplayhouse.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white" data-testid="link-alpaca-playhouse-hero">Alpaca Playhouse</a>, Austin Texas USA
           </motion.h1>
           
           <motion.div
