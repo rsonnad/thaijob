@@ -14,6 +14,7 @@ import oilMassageImage from "@assets/oil_massage_1768661744672.jpg";
 import saunaSitImage from "@assets/Sauna_Sit_1768661809468.jpg";
 import windingDownImage from "@assets/windingdown_1768661823894.jpg";
 import windDownImage from "@assets/Wind_down_1768662069089.jpg";
+import tranceModeImage from "@assets/trancemode_1768664468090.jpg";
 
 const journeyElements = [
   { title: "Online Intake Survey", description: "Personalized preparation for your journey", image: surveyImage },
@@ -72,7 +73,7 @@ const phases = [
     title: '"Wind Down" - Phase 3: 30 minutes',
     description: "As your journey concludes, this phase helps you integrate the experience. Gentle cooling techniques, rest, and subtle energy work allow your nervous system to recalibrate.",
     detail: "This transition helps your body recognize and retain the benefits of your profound work.",
-    image: windDownImage
+    image: tranceModeImage
   },
   {
     title: '"Free Form Integration" - Phase 4: 1 hour',

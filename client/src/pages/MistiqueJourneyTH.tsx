@@ -14,6 +14,7 @@ import oilMassageImage from "@assets/oil_massage_1768661744672.jpg";
 import saunaSitImage from "@assets/Sauna_Sit_1768661809468.jpg";
 import windingDownImage from "@assets/windingdown_1768661823894.jpg";
 import windDownImage from "@assets/Wind_down_1768662069089.jpg";
+import tranceModeImage from "@assets/trancemode_1768664468090.jpg";
 
 const journeyElements = [
   { title: "แบบสอบถามออนไลน์", description: "เตรียมความพร้อมเฉพาะบุคคลก่อนเริ่มต้น", image: surveyImage },
@@ -72,7 +73,7 @@ const phases = [
     title: '"ผ่อนคลาย" - ระยะที่ 3: 30 นาที',
     description: "เมื่อการเดินทางสิ้นสุด ระยะนี้ช่วยให้คุณผสานประสบการณ์ เทคนิคเย็น การพักผ่อน และการทำงานพลังงานละเอียด",
     detail: "การเปลี่ยนผ่านนี้ช่วยให้ร่างกายจดจำและรักษาประโยชน์จากการทำงานลึกซึ้ง",
-    image: windDownImage
+    image: tranceModeImage
   },
   {
     title: '"การผสานรวมอิสระ" - ระยะที่ 4: 1 ชั่วโมง',
