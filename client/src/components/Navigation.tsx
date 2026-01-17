@@ -2,7 +2,6 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/use-language";
 import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
 
 export function Navigation() {
   const { lang, setLang, t } = useLanguage();
@@ -31,9 +30,19 @@ export function Navigation() {
             size="sm" 
             onClick={() => setLang(lang === "en" ? "th" : "en")}
             className="gap-2 font-medium"
+            data-testid="button-language-toggle"
           >
-            <Globe className="w-4 h-4" />
-            {lang === "en" ? "TH" : "EN"}
+            {lang === "en" ? (
+              <>
+                <span className="text-base">🇹🇭</span>
+                <span>TH</span>
+              </>
+            ) : (
+              <>
+                <span className="text-base">🇺🇸</span>
+                <span>EN</span>
+              </>
+            )}
           </Button>
         </div>
       </div>
