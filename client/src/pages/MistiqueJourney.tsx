@@ -7,9 +7,12 @@ import greetingsImage from "@assets/greetings_1768660212215.jpg";
 import breathworkImage from "@assets/breathwork_1768660221101.jpg";
 import thaiYogaImage from "@assets/Thai_Yoga_Massage_1768660639595.jpg";
 import somaticsImage from "@assets/Somatics_1768660991786.jpg";
-import groundingImage from "@assets/Grounding_1768661011236.jpg";
 import saunaTubs from "@assets/Saunatubs_1768657655707.png";
 import skyTreatment from "@assets/sky_treatment_1768657655707.jpg";
+import icebathImage from "@assets/Icebath_1768661286594.jpg";
+import oilMassageImage from "@assets/oil_massage_1768661744672.jpg";
+import saunaSitImage from "@assets/Sauna_Sit_1768661809468.jpg";
+import windingDownImage from "@assets/windingdown_1768661823894.jpg";
 
 const journeyElements = [
   { title: "Online Intake Survey", description: "Personalized preparation for your journey", image: surveyImage },
@@ -17,10 +20,10 @@ const journeyElements = [
   { title: "Breathwork Meditation", description: "Guided breathing techniques for transformation", image: breathworkImage },
   { title: "Assisted Yoga", description: "Gentle guidance through beneficial postures", image: thaiYogaImage },
   { title: "Traditional Thai Massage", description: "Ancient healing techniques for releasing tension", image: skyTreatment },
-  { title: "Oil Massage", description: "Relaxing bodywork with therapeutic oils", image: somaticsImage },
-  { title: "Sauna", description: "Detoxifying heat therapy", image: saunaTubs },
-  { title: "Cold Bath", description: "Invigorating cold immersion", image: groundingImage },
-  { title: "Resting & Integration", description: "Peaceful completion of your journey", image: greetingsImage },
+  { title: "Oil Massage", description: "Relaxing bodywork with therapeutic oils", image: oilMassageImage },
+  { title: "Sauna", description: "Detoxifying heat therapy", image: saunaSitImage },
+  { title: "Cold Bath", description: "Invigorating cold immersion", image: icebathImage },
+  { title: "Resting & Integration", description: "Peaceful completion of your journey", image: windingDownImage },
 ];
 
 const testimonials = [
@@ -56,7 +59,7 @@ const phases = [
     title: '"Grounding" - Phase 1: 30 minutes',
     description: "Begin your journey with centering practices that help you arrive fully in your body. Through guided meditation and gentle awareness exercises, you'll establish a foundation of presence.",
     detail: "This phase sets the tone for your entire experience, helping you leave behind daily stress and connect with your breath and body.",
-    image: groundingImage
+    image: greetingsImage
   },
   {
     title: '"Somatics" - Phase 2: Up to 3 hours',
@@ -68,13 +71,13 @@ const phases = [
     title: '"Wind Down" - Phase 3: 30 minutes',
     description: "As your journey concludes, this phase helps you integrate the experience. Gentle cooling techniques, rest, and subtle energy work allow your nervous system to recalibrate.",
     detail: "This transition helps your body recognize and retain the benefits of your profound work.",
-    image: saunaTubs
+    image: icebathImage
   },
   {
     title: '"Free Form Integration" - Phase 4: 1 hour',
     description: "The final hour is dedicated to integration. This phase may include gentle conversation, creative expression, or quiet reflection, providing space to process insights and prepare for everyday life.",
     detail: "",
-    image: greetingsImage
+    image: saunaTubs
   },
 ];
 
@@ -197,7 +200,7 @@ export default function MistiqueJourney() {
 
         <section className="space-y-8 bg-white p-8 md:p-12 rounded-3xl border">
           <div className="max-w-sm mx-auto rounded-2xl overflow-hidden shadow-md mb-6">
-            <img src={greetingsImage} alt="Greeting" className="w-full h-auto object-cover" />
+            <img src={somaticsImage} alt="Somatics Experience" className="w-full h-auto object-cover" />
           </div>
           <h2 className="text-3xl font-serif font-bold text-center">What Others Have Experienced</h2>
           <div className="space-y-6 max-w-3xl mx-auto">
@@ -282,7 +285,7 @@ export default function MistiqueJourney() {
 
         <section className="space-y-8 bg-white p-8 md:p-12 rounded-3xl border">
           <div className="max-w-sm mx-auto rounded-2xl overflow-hidden shadow-md mb-6">
-            <img src={greetingsImage} alt="Greeting" className="w-full h-auto object-cover" />
+            <img src={saunaTubs} alt="Sauna and Tubs" className="w-full h-auto object-cover" />
           </div>
           <h2 className="text-3xl font-serif font-bold text-center">Ready to Begin Your Journey?</h2>
           <p className="text-center text-muted-foreground">
