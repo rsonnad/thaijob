@@ -7,6 +7,7 @@ import beachWork from "@assets/beach_work_1768629875681.png";
 import referralBonus from "@assets/referral_bonus_1768629875681.png";
 import robotMassage from "@assets/Robot_Copy_Massage_1768629875681.jpg";
 import skylineTreatment from "@assets/skyline_treatment_1768629875681.png";
+import skyTourist from "@assets/sky_tourist_1768632009798.png";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -192,6 +193,11 @@ export default function Home() {
               {t.applyForm.submit}
             </a>
           </Button>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg max-w-xs mx-auto mt-12">
+            <img src={skyTourist} alt="Sky Tourist" className="w-full h-auto object-cover" />
+          </div>
+
           <div className="pt-4 space-y-4">
             <Button variant="link" className="text-primary font-medium" asChild>
               <a href="#refer" className="text-lg">Refer a friend</a>
