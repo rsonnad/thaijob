@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Plane, Users, DollarSign, CheckCircle2, Clock, MapPin, Briefcase, Star, Info } from "lucide-react";
 import beachWork from "@assets/beach_work_1768657655706.jpg";
 import referralBonus from "@assets/referal_bonus_1768657655706.jpg";
-import robotMassage from "@assets/Robot_Copy_Massage_1768657655707.png";
+import windingDownNew from "@assets/windingdown_1768894712351.jpg";
 import skylineTreatment from "@assets/sky_treatment_1768657655707.jpg";
 import saunaTubs from "@assets/Saunatubs_1768657655707.png";
 
@@ -157,7 +157,7 @@ export default function Home() {
             </div>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-md max-w-xs mx-auto">
-            <img src={robotMassage} alt="Robotics Training" className="w-full h-auto object-cover" />
+            <img src={windingDownNew} alt="Wellness Experience" className="w-full h-auto object-cover" />
           </div>
         </section>
 
